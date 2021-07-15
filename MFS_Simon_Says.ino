@@ -95,11 +95,9 @@ void loop() {
     if (calcLevel == true){
       for (sStateAux1; sStateAux1<level; sStateAux1++){
         outputs[sStateAux1] = random(4);
-        // Serial.println(outputs[sStateAux1]);
       }
       calcLevel = false;
     }
-    //Serial.println(sStateAux2);
     if (level >= sStateAux2+1){
       displayObj(outputs[sStateAux2]);
       if (resetOutputsTimer == true){
@@ -110,13 +108,10 @@ void loop() {
         sStateAux2++;
         resetOutputsTimer = true;
       }
-      // Serial.println(level);
-      // Serial.println(sStateAux2);
     }
     else state = 'p';
   }
   else if (state == 'p'){
-    // Serial.println("p-body");
     if (level >= pStateAux+1){
       if (lBtnPressed == 1){
         selection--;
@@ -167,10 +162,6 @@ void loop() {
       calcLevel = true;
       state = 's';
     }
-  }
-  //Serial.println(state);
-  //Serial.println(outputs[1]);
-  //Serial.println(inputs[1]);
   checkLBtn();
   checkSBtn();
   checkRBtn();
